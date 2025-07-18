@@ -10,9 +10,9 @@
 
 在本项目中，用C语言分别实现了基础的SM4算法，以及使用AESNI指令优化的SM4算法，二者代码分别在路径 `./SM4_basic`、`./SM4_aesni`下，这两个文件加下也存在对应实现方式的详细说明文档：
 
-[·SM4_basic说明文档](./sm4_basic/README.md)
+[·SM4_basic说明文档](./SM4_basic/README.md)
 
-·[SM4_aesni说明文档](./sm4_aesni/README.md) :包含了aesni指令优化的原理、思路以及实现的讲解，强烈建议一看。
+·[SM4_aesni说明文档](./SM4_aesni/README.md) :包含了aesni指令优化的原理、思路以及实现的讲解，强烈建议一看。
 
 ## 快速开始
 
