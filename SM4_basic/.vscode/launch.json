@@ -1,0 +1,32 @@
+{
+  "configurations": [
+    {
+      "name": "build launch 1",//自定义命名启动与调式的名称，将在左侧run and debug的菜单中显示名称。
+      "type": "cppdbg",// 配置类型，调试器类型，cppdbg为C/C++的调试类型。 
+      "request": "launch",//配置请求类型，可以为launch（启动）或attach（附加）。
+      //下面是windows系统下需要调试的.exe文件及其路径,应该与tasks.json的输出的.exe文件及其路径一致。
+      "program": "${workspaceFolder}\\SM4_basic.exe",
+      "args": ["-E","sample.txt","key.txt","encsample.txt"],// 程序调试时传递给程序的命令行参数，一般设为空即可，这里提到的程序实际就上面的.exe文件，下同。
+      "stopAtEntry": true,// 设为true时程序将暂停在程序入口处，一般设置为false。
+      "cwd": "${workspaceFolder}",//当前工作目录(路径)。
+      "environment": [],//添加到程序的环境变量。
+      "externalConsole": false,//true开启外部控制台窗口，false会使用vscode内部控制台窗口。
+      "MIMode": "gdb",//使用gdb进行调试。
+      "miDebuggerPath": "D:/GCC/w64devkit/bin/gdb.exe",//调试器debugger文件及其路径,调用gdb调试器。
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Set Disassembly Flavor to Intel",
+          "text": "-gdb-set disassembly-flavor intel",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "build task 1"//运行和调式前要启动的tasks任务，也即要启动的编译任务，任务名要和tasks.json里的"label"值对应一致。
+    }
+  ],
+  "version": "2.0.0"
+}

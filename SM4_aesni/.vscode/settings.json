@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "immintrin.h": "c",
+        "sm4_box_aesenclast_intel.h": "c",
+        "type_traits": "c",
+        "sm4_aesin_x4.h": "c"
+    }
+}
