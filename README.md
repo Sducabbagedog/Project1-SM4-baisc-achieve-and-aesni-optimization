@@ -14,7 +14,11 @@
 
 ·[SM4_aesni说明文档](./sm4_aesni/README.md) :包含了aesni指令优化的原理、思路以及实现的讲解，强烈建议一看。
 
+·[SM4_GCM说明文档](./SM4_GCM/README.md)
+
 ## 快速开始
+
+### SM4_basic和SM4_aesni
 
 SM4_basic和SM4_aesni均已编译成可以直接运行的程序，分别是 `./SM4_basic/SM4_basic.exe`、 `./SM4_aesni/sm4_acc.exe`。
 
@@ -41,6 +45,22 @@ SM4_basic和SM4_aesni均已编译成可以直接运行的程序，分别是 `./S
 ```
 
 加密生成一个 `enc_example_standard.txt`文件，你可以用十六进制编辑器比对是否和[国密标准SM4文档](32907-2016-gbt-cd-300.pdf)中提供的示例相同。同样的，解密会将解密出的明文存储在 `.\testfile/vertify_standard.txt`中，你可以比对该文件和 `.\testfile\example_standard.txt`的内容来验证加解密的正确性。解密过程我没有设计自动去除可能在加密中起到padding作用空字符，所以如果你用文本编辑器查看解密出的明文，或许末尾会跟着几个NULL字符。
+
+### SM4_GCM
+
+关于这个我没有时间做它的接口匹配了（反正SM4_GCM的接口匹配和SM4_basic、SM4_aesni基本一致），代码是一个偏向于演示性的代码，你可以直接运行：
+
+```
+.\SM4_GCM\SM4_GCM.exe
+```
+
+可以得到结果：
+
+```
+Plaintext:  Hello SM4-GCM! This is a test.
+Ciphertext: 3290d62f412a92d91c6c1e3cd353576b44e08a22f4caae46074b5eb9abf0
+Tag: 05f6c76358f9aeb3ca112a5899efeba3
+```
 
 ## 性能对比
 
